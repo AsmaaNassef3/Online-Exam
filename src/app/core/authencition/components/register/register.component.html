@@ -1,0 +1,265 @@
+<form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+  <div class="xl:ms-36 xl:me-44 mt-10 flex-col xl:mt-40 relative flex">
+    <h3 class="font-bold text-[24.78px] leading-[100%] mb-7">
+      {{ 'register.title' | translate }}
+    </h3>
+    <!-- Username -->
+    <div class="mb-8 relative w-full">
+      <input
+        formControlName="username"
+        type="text"
+        [ngClass]="{
+          'border-[#E0E0E9]': !registerForm.get('username')?.touched,
+          'border-red-500 focus:border-red-500': registerForm.get('username')?.touched && registerForm.get('username')?.invalid,
+          'border-green-500 focus:border-green-500': registerForm.get('username')?.touched && registerForm.get('username')?.valid
+        }"
+        class="lg:w-[410px] w-full shadow-[0px_10.09px_20.18px_0px_rgba(68,97,242,0.05)] rounded-custom2 border-0.99 px-3 h-[55px] pr-12 focus:outline-none transition-colors duration-200"
+        [placeholder]="'register.username' | translate"
+        required
+      />
+      <div *ngIf="registerForm.get('username')?.touched">
+        <div *ngIf="registerForm.get('username')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-red-800 rounded-custom2 bg-red-50 border border-red-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.error' | translate }}</span> {{ 'register.usernameRequired' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('username')?.hasError('pattern') && !registerForm.get('username')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-yellow-800 rounded-custom2 bg-yellow-50 border border-yellow-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-yellow-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.warning' | translate }}</span> {{ 'register.usernamePattern' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('username')?.valid" class="flex items-center p-2 pe-1 mb-2 text-xs text-green-800 rounded-custom2 bg-green-50 border border-green-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.success' | translate }}</span> {{ 'register.usernameValid' | translate }}
+        </div>
+      </div>
+    </div>
+    <!-- First Name -->
+    <div class="mb-8 relative w-full">
+      <input
+        formControlName="firstName"
+        type="text"
+        [ngClass]="{
+          'border-[#E0E0E9]': !registerForm.get('firstName')?.touched,
+          'border-red-500 focus:border-red-500': registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid,
+          'border-green-500 focus:border-green-500': registerForm.get('firstName')?.touched && registerForm.get('firstName')?.valid
+        }"
+        class="lg:w-[410px] w-full shadow-[0px_10.09px_20.18px_0px_rgba(68,97,242,0.05)] rounded-custom2 border-0.99 px-3 h-[55px] pr-12 focus:outline-none transition-colors duration-200"
+        [placeholder]="'register.firstName' | translate"
+        required
+      />
+      <div *ngIf="registerForm.get('firstName')?.touched">
+        <div *ngIf="registerForm.get('firstName')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-red-800 rounded-custom2 bg-red-50 border border-red-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.error' | translate }}</span> {{ 'register.firstNameRequired' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('firstName')?.hasError('pattern') && !registerForm.get('firstName')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-yellow-800 rounded-custom2 bg-yellow-50 border border-yellow-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-yellow-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.warning' | translate }}</span> {{ 'register.firstNamePattern' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('firstName')?.valid" class="flex items-center p-2 pe-1 mb-2 text-xs text-green-800 rounded-custom2 bg-green-50 border border-green-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.success' | translate }}</span> {{ 'register.firstNameValid' | translate }}
+        </div>
+      </div>
+    </div>
+    <!-- Last Name -->
+    <div class="mb-8 relative w-full">
+      <input
+        formControlName="lastName"
+        type="text"
+        [ngClass]="{
+          'border-[#E0E0E9]': !registerForm.get('lastName')?.touched,
+          'border-red-500 focus:border-red-500': registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid,
+          'border-green-500 focus:border-green-500': registerForm.get('lastName')?.touched && registerForm.get('lastName')?.valid
+        }"
+        class="lg:w-[410px] w-full shadow-[0px_10.09px_20.18px_0px_rgba(68,97,242,0.05)] rounded-custom2 border-0.99 px-3 h-[55px] pr-12 focus:outline-none transition-colors duration-200"
+        [placeholder]="'register.lastName' | translate"
+        required
+      />
+      <div *ngIf="registerForm.get('lastName')?.touched">
+        <div *ngIf="registerForm.get('lastName')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-red-800 rounded-custom2 bg-red-50 border border-red-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.error' | translate }}</span> {{ 'register.lastNameRequired' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('lastName')?.hasError('pattern') && !registerForm.get('lastName')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-yellow-800 rounded-custom2 bg-yellow-50 border border-yellow-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-yellow-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.warning' | translate }}</span> {{ 'register.lastNamePattern' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('lastName')?.valid" class="flex items-center p-2 pe-1 mb-2 text-xs text-green-800 rounded-custom2 bg-green-50 border border-green-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.success' | translate }}</span> {{ 'register.lastNameValid' | translate }}
+        </div>
+      </div>
+    </div>
+    <!-- Email -->
+    <div class="mb-8 relative w-full">
+      <input
+        formControlName="email"
+        type="email"
+        [ngClass]="{
+          'border-[#E0E0E9]': !registerForm.get('email')?.touched,
+          'border-red-500 focus:border-red-500': registerForm.get('email')?.touched && registerForm.get('email')?.invalid,
+          'border-green-500 focus:border-green-500': registerForm.get('email')?.touched && registerForm.get('email')?.valid
+        }"
+        class="lg:w-[410px] w-full shadow-[0px_10.09px_20.18px_0px_rgba(68,97,242,0.05)] rounded-custom2 border-0.99 px-3 h-[55px] pr-12 focus:outline-none transition-colors duration-200"
+        [placeholder]="'register.email' | translate"
+        required
+      />
+      <div *ngIf="registerForm.get('email')?.touched">
+        <div *ngIf="registerForm.get('email')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-red-800 rounded-custom2 bg-red-50 border border-red-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.error' | translate }}</span> {{ 'register.emailRequired' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('email')?.hasError('email') && !registerForm.get('email')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-yellow-800 rounded-custom2 bg-yellow-50 border border-yellow-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-yellow-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.warning' | translate }}</span> {{ 'register.emailPattern' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('email')?.valid" class="flex items-center p-2 pe-1 mb-2 text-xs text-green-800 rounded-custom2 bg-green-50 border border-green-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.success' | translate }}</span> {{ 'register.emailValid' | translate }}
+        </div>
+      </div>
+    </div>
+    <!-- Password -->
+    <div class="mb-6 relative w-full">
+      <input
+        formControlName="password"
+        type="password"
+        [ngClass]="{
+          'border-[#E0E0E9]': !registerForm.get('password')?.touched,
+          'border-red-500 focus:border-red-500': registerForm.get('password')?.touched && registerForm.get('password')?.invalid,
+          'border-green-500 focus:border-green-500': registerForm.get('password')?.touched && registerForm.get('password')?.valid
+        }"
+        class="lg:w-[410px] w-full shadow-[0px_10.09px_20.18px_0px_rgba(68,97,242,0.05)] rounded-custom2 border-0.99 px-3 h-[55px] pr-12 focus:outline-none transition-colors duration-200"
+        [placeholder]="'register.password' | translate"
+        required
+      />
+      <div *ngIf="registerForm.get('password')?.touched">
+        <div *ngIf="registerForm.get('password')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-red-800 rounded-custom2 bg-red-50 border border-red-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.error' | translate }}</span> {{ 'register.passwordRequired' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('password')?.hasError('pattern') && !registerForm.get('password')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-yellow-800 rounded-custom2 bg-yellow-50 border border-yellow-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-yellow-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.warning' | translate }}</span> {{ 'register.passwordPattern' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('password')?.valid" class="flex items-center p-2 pe-1 mb-2 text-xs text-green-800 rounded-custom2 bg-green-50 border border-green-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.success' | translate }}</span> {{ 'register.passwordValid' | translate }}
+        </div>
+      </div>
+    </div>
+    <!-- Confirm Password -->
+    <div class="mb-6 relative w-full">
+      <input
+        formControlName="rePassword"
+        type="password"
+        [ngClass]="{
+          'border-[#E0E0E9]': !registerForm.get('rePassword')?.touched,
+          'border-red-500 focus:border-red-500': registerForm.get('rePassword')?.touched && registerForm.get('rePassword')?.invalid,
+          'border-green-500 focus:border-green-500': registerForm.get('rePassword')?.touched && registerForm.get('rePassword')?.valid
+        }"
+        class="lg:w-[410px] w-full shadow-[0px_10.09px_20.18px_0px_rgba(68,97,242,0.05)] rounded-custom2 border-0.99 px-3 h-[55px] pr-12 focus:outline-none transition-colors duration-200"
+        [placeholder]="'register.confirmPassword' | translate"
+        required
+      />
+      <div *ngIf="registerForm.get('rePassword')?.touched">
+        <div *ngIf="registerForm.get('rePassword')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-red-800 rounded-custom2 bg-red-50 border border-red-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.error' | translate }}</span> {{ 'register.confirmPasswordRequired' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('rePassword')?.hasError('pattern') && !registerForm.get('rePassword')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-yellow-800 rounded-custom2 bg-yellow-50 border border-yellow-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-yellow-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.warning' | translate }}</span> {{ 'register.confirmPasswordPattern' | translate }}
+        </div>
+        <div *ngIf="registerForm.hasError('misMatch') && registerForm.get('rePassword')?.touched && !registerForm.get('rePassword')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-red-800 rounded-custom2 bg-red-50 border border-red-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.error' | translate }}</span> {{ 'register.passwordsMismatch' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('rePassword')?.valid && !registerForm.hasError('misMatch')" class="flex items-center p-2 pe-1 mb-2 text-xs text-green-800 rounded-custom2 bg-green-50 border border-green-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.success' | translate }}</span> {{ 'register.confirmPasswordValid' | translate }}
+        </div>
+      </div>
+    </div>
+    <!-- Phone -->
+    <div class="mb-6 relative w-full">
+      <input
+        formControlName="phone"
+        type="text"
+        [ngClass]="{
+          'border-[#E0E0E9]': !registerForm.get('phone')?.touched,
+          'border-red-500 focus:border-red-500': registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid,
+          'border-green-500 focus:border-green-500': registerForm.get('phone')?.touched && registerForm.get('phone')?.valid
+        }"
+        class="lg:w-[410px] w-full shadow-[0px_10.09px_20.18px_0px_rgba(68,97,242,0.05)] rounded-custom2 border-0.99 px-3 h-[55px] pr-12 focus:outline-none transition-colors duration-200"
+        [placeholder]="'register.phone' | translate"
+        required
+      />
+      <div *ngIf="registerForm.get('phone')?.touched">
+        <div *ngIf="registerForm.get('phone')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-red-800 rounded-custom2 bg-red-50 border border-red-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.error' | translate }}</span> {{ 'register.phoneRequired' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('phone')?.hasError('pattern') && !registerForm.get('phone')?.hasError('required')" class="flex items-center p-2 pe-1 mb-2 text-xs text-yellow-800 rounded-custom2 bg-yellow-50 border border-yellow-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-yellow-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.warning' | translate }}</span> {{ 'register.phonePattern' | translate }}
+        </div>
+        <div *ngIf="registerForm.get('phone')?.valid" class="flex items-center p-2 pe-1 mb-2 text-xs text-green-800 rounded-custom2 bg-green-50 border border-green-300 lg:w-[410px] w-full" style="height:38px;">
+          <svg class="shrink-0 inline w-3 h-3 me-2 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="font-medium">{{ 'validation.success' | translate }}</span> {{ 'register.phoneValid' | translate }}
+        </div>
+      </div>
+    </div>
+    <h4 class="text-center relative mt-4">
+      {{ 'register.alreadyHaveAccount' | translate }}
+      <a routerLink="/login" class="text-[#4461F2]">{{ 'register.login' | translate }}</a>
+    </h4>
+    <app-auth-btn>
+      {{ 'register.submit' | translate }}
+    </app-auth-btn>
+  </div>
+</form>

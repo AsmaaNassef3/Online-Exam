@@ -1,0 +1,37 @@
+.timer {
+  color: #11ce19;
+  width: 40px;
+}
+
+.quiz-step-wrapper {
+  padding: 8px;
+}
+
+.quiz-step {
+  width: 10px;
+  height: 10px;
+  margin: 8px;
+  background: #d9d9d9;
+  border-radius: 50%;
+}
+
+.answered {
+  background: #1d41cde7;
+;
+}
+
+.answer-box {
+  background: #edeff3;
+  padding: 16px 8px;
+  border-radius: 10px;
+  // margin: 4px 0;
+  word-break: break-all;
+}
+
+.animate-fade-in-slow {
+  animation: fadeIn 1.5s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

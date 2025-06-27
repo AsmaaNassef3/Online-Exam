@@ -1,0 +1,193 @@
+{
+  "lang": {
+    "english": "الإنجليزية",
+    "arabic": "العربية"
+  },
+  "auth": {
+    "signin": "تسجيل الدخول",
+    "register": "تسجيل",
+    "welcome": "مرحبًا بك في إيليفيت!",
+    "brand": "تطبيق إيليفيت للامتحانات",
+    "tagline": "طريقك إلى النجاح"
+  },
+  "signIn": {
+    "title": "تسجيل الدخول",
+    "welcome": "مرحبًا بك في إيلفيت",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "button": "تسجيل الدخول",
+    "forgotPassword": "هل نسيت كلمة المرور؟"
+  },
+  "signUp": {
+    "usernamePlaceholder": "أدخل اسم المستخدم",
+    "firstNamePlaceholder": "أدخل الاسم الأول",
+    "lastNamePlaceholder": "أدخل اسم العائلة",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "confirmPasswordPlaceholder": "تأكيد كلمة المرور",
+    "phonePlaceholder": "أدخل رقم هاتفك",
+    "button": "تسجيل",
+    "title": "تسجيل جديد",
+    "welcome": "مرحبًا بك في إيلفيت"
+  },
+  "forgotPassword": {
+    "title": "هل نسيت كلمة المرور؟",
+    "welcome": "مرحبًا بك في إيلفيت",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "button": "إرسال رابط إعادة التعيين"
+  },
+  "verifyCode": {
+    "title": "تحقق من الرمز",
+    "welcome": "مرحبًا بك في إيلفيت",
+    "codePlaceholder": "أدخل رمز التحقق",
+    "button": "تحقق"
+  },
+  "setPassword": {
+    "title": "تعيين كلمة مرور",
+    "welcome": "مرحبًا بك في إيلفيت",
+    "passwordPlaceholder": "أدخل كلمة المرور الجديدة",
+    "confirmPasswordPlaceholder": "تأكيد كلمة المرور الجديدة",
+    "button": "تعيين كلمة المرور"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم"
+  },
+  "selectDiploma": {
+    "title": "اختر الدبلوم"
+  },
+  "results": {
+    "title": "النتائج"
+  },
+  "quizHistory": {
+    "title": "تاريخ الاختبارات"
+  },
+  "answerQuiz": {
+    "title": "أجب على الاختبار"
+  },
+  "subject": {
+    "active": "نشط",
+    "description": "تقييم شامل يغطي المفاهيم الرئيسية والتطبيقات العملية"
+  },
+  "notFound": {
+    "title": "عذراً! الصفحة غير موجودة.",
+    "message": "يبدو أنك اخترت الباب الخطأ لأنني لم أتمكن من العثور على الصفحة التي تبحث عنها."
+  },
+  "examSummary": {
+    "review": "مراجعة الامتحان",
+    "needAttention": "الأسئلة التي تحتاج إلى انتباهك",
+    "incorrect": "إجابة خاطئة",
+    "reviewing": "مراجعة {{count}} سؤال يحتاج إلى تحسين.",
+    "question": "سؤال"
+  },
+  "examScore": {
+    "excellent": "عمل ممتاز!",
+    "summary": "إليك ملخص أدائك في الامتحان.",
+    "close": "إغلاق",
+    "reviewAnswers": "مراجعة الإجابات"
+  },
+  "timeEnd": {
+    "ended": "انتهى وقت الامتحان.",
+    "showReview": "عرض مراجعة الامتحان"
+  },
+  "brand": {
+    "title": "تطبيق إيليفيت للامتحانات",
+    "subtitle": "طريقك إلى النجاح"
+  },
+  "welcome": {
+    "title": "مرحبًا بك في إيليفيت!",
+    "description": "ابدأ رحلتك التعليمية معنا.",
+    "cta": "ابدأ الآن"
+  },
+  "sidebar": {
+    "dashboard": "لوحة التحكم",
+    "quizHistory": "سجل الاختبارات",
+    "logout": "تسجيل الخروج",
+    "copyright": "تطبيقك"
+  },
+  "examCard": {
+    "questions": "أسئلة",
+    "minutes": "دقائق",
+    "available": "متاح",
+    "startExam": "ابدأ الامتحان"
+  },
+  "examContainer": {
+    "noExams": "لا توجد اختبارات متاحة",
+    "noExamsDesc": "لا توجد اختبارات متاحة حاليًا لهذا الموضوع.",
+    "checkBack": "تحقق مرة أخرى لاحقًا أو استكشف مواضيع أخرى.",
+    "backToDashboard": "العودة إلى لوحة التحكم"
+  },
+  "register": {
+    "title": "تسجيل حساب جديد",
+    "username": "اسم المستخدم",
+    "usernameRequired": "اسم المستخدم مطلوب",
+    "usernamePattern": "يجب أن يكون اسم المستخدم من 6 إلى 20 حرفًا ويبدأ بحرف",
+    "usernameValid": "اسم المستخدم جيد",
+    "firstName": "الاسم الأول",
+    "firstNameRequired": "الاسم الأول مطلوب",
+    "firstNamePattern": "يجب أن يبدأ الاسم الأول بحرف كبير",
+    "firstNameValid": "الاسم الأول جيد",
+    "lastName": "اسم العائلة",
+    "lastNameRequired": "اسم العائلة مطلوب",
+    "lastNamePattern": "يجب أن يبدأ اسم العائلة بحرف كبير",
+    "lastNameValid": "اسم العائلة جيد",
+    "email": "البريد الإلكتروني",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "emailPattern": "يرجى إدخال بريد إلكتروني صحيح",
+    "emailValid": "البريد الإلكتروني جيد",
+    "password": "كلمة المرور",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordPattern": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل وتحتوي على حرف كبير وصغير ورقم ورمز",
+    "passwordValid": "كلمة المرور قوية",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPasswordRequired": "تأكيد كلمة المرور مطلوب",
+    "confirmPasswordPattern": "يجب أن تتطابق كلمات المرور وتلبي متطلبات التعقيد",
+    "passwordsMismatch": "كلمات المرور غير متطابقة",
+    "confirmPasswordValid": "كلمات المرور متطابقة",
+    "phone": "رقم الهاتف",
+    "phoneRequired": "رقم الهاتف مطلوب",
+    "phonePattern": "يجب أن يتكون رقم الهاتف من 10 أرقام",
+    "phoneValid": "رقم الهاتف جيد",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "login": "تسجيل الدخول",
+    "submit": "تسجيل"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "submit": "دخول"
+  },
+  "validation": {
+    "error": "خطأ!",
+    "warning": "تحذير!",
+    "success": "نجاح!"
+  },
+  "subjects": {
+    "title": "المواد",
+    "subtitle": "مرحبًا بك في لوحة التحكم!",
+    "quizPassed": "الاختبارات المجتازة",
+    "fastestTime": "أسرع وقت",
+    "correctAnswers": "الإجابات الصحيحة",
+    "quizzes": "الاختبارات",
+    "viewAll": "عرض الكل",
+    "caption": "هذا نص تجريبي."
+  },
+  "exams": {
+    "description": "وصف الامتحان هنا.",
+    "backToDashboard": "العودة للوحة التحكم"
+  },
+  "footer": {
+    "rights": "جميع الحقوق محفوظة."
+  },
+  "examQuestions": {
+    "questionOf": "سؤال {{current}} من {{total}}",
+    "timeRemaining": "الوقت المتبقي",
+    "back": "السابق",
+    "next": "التالي"
+  },
+  "direction": {
+    "rtl": "rtl",
+    "ltr": "ltr"
+  }
+}

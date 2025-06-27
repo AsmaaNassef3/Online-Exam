@@ -1,0 +1,118 @@
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(30px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-fade-in {
+  animation: fade-in 1.2s cubic-bezier(0.4,0,0.2,1) both;
+}
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient-move {
+  background: linear-gradient(270deg, #4461F2, #FFD700, #6E8EFB, #A1C4FD, #4461F2);
+  background-size: 800% 800%;
+  animation: gradient-move 8s ease-in-out infinite;
+  opacity: 0.25;
+  border-radius: 1.5rem;
+  width: 100%;
+  height: 100%;
+}
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+@keyframes rotate-circle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-rotate-circle {
+  animation: rotate-circle 2s linear infinite;
+}
+@keyframes rotate-circle-smooth {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-rotate-circle-smooth {
+  animation: rotate-circle-smooth 4s linear infinite;
+}
+@keyframes move-right-back {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+.animate-move-right-back {
+  animation: move-right-back 0.6s ease-in-out infinite;
+}
+
+// Blue gradient background for card
+.bg-blue-gradient {
+  background: linear-gradient(135deg, #f7f8fa 0%, #e0e7ef 50%, #b6ccfe 100%);
+}
+@media (max-width: 900px) {
+  .bg-blue-gradient {
+    background: linear-gradient(135deg, #f7f8fa 0%, #e0e7ef 60%, #b6ccfe 100%);
+  }
+}
+@media (max-width: 640px) {
+  .bg-blue-gradient {
+    background: linear-gradient(135deg, #f7f8fa 0%, #e0e7ef 80%, #b6ccfe 100%);
+  }
+}
+
+// Gray shadow for card
+.shadow-blue-xl {
+  box-shadow: 0 8px 32px 0 rgba(60, 60, 60, 0.13), 0 1.5px 6px 0 #e0e7ef;
+}
+// Gray border for card
+.border-blue-200 {
+  border-color: #e0e7ef !important;
+}
+// Blue hover for button
+.btn-blue {
+  background: #eaf1fb;
+  color: #23408e;
+  border: 2px solid #6E8EFB;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+  border-radius: 9999px !important; /* fully pill/circle */
+  min-width: 44px;
+  min-height: 44px;
+  padding-left: 0.9em;
+  padding-right: 0.9em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-blue:hover, .btn-blue:focus {
+  background: #c7d6f7;
+  color: #23408e;
+  border-color: #4461F2;
+}
+// Blue text
+.text-blue-900 { color: #23408e; }
+.text-blue-800 { color: #4461F2; }
+.text-blue-700 { color: #6E8EFB; }
+.text-blue-600 { color: #b6ccfe; }
+
+// Exam ID badge style
+.id-badge {
+  background: #f3f4f6 !important;
+  color: #23408e !important;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 1px 4px 0 rgba(60,60,60,0.08);
+  letter-spacing: 0.03em;
+}

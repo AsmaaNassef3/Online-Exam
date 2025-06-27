@@ -1,0 +1,70 @@
+<div class="h-full">
+<header class="exam-header mb-4">
+    <div class="top-header flex flex-wrap gap-4 items-center justify-between">
+      <div class="left-side text-base sm:text-lg">
+        <span class="font-bold text-blue-700 bg-blue-50 px-4 py-2 rounded-xl shadow animate-fade-in-slow flex items-center gap-2">
+          <i class="fa-solid fa-hashtag text-blue-400 text-lg"></i>
+          {{ 'examQuestions.questionOf' | translate:{ current: ((currentQuestionObj$ | async)?.index ?? 0) + 1, total: numOfQuestions$ | async } }}
+        </span>
+      </div>
+      <div class="right-side flex items-center gap-2 text-sm sm:text-base">
+        <i class="fa-solid fa-hourglass-half text-yellow-400 text-2xl animate-spin-slow"></i>
+        <span class="text-green-600 font-bold text-lg animate-pulse">
+          {{ ((timer$ | async) ?? 0) / 60 | number:'1.0-0' }}:{{ ((timer$ | async) ?? 0) % 60 | number:'2.0-0' }}
+          <span class="text-blue-500 font-semibold animate-bounce">{{ 'examQuestions.timeRemaining' | translate }}</span>
+        </span>
+      </div>
+    </div>
+    <div class="unstyled-list quiz-step-wrapper flex flex-wrap justify-center sm:justify-around mt-3">
+      @for (step of generateRange((numOfQuestions$ | async) ?? 0); track $index) {
+        @if($index <= ((currentQuestionObj$ | async)?.index ?? 0)){
+          <div class="quiz-step answered"></div>
+        } @else {
+          <div class="quiz-step"></div>
+        }
+      }
+    </div>
+  </header>
+  <div class="question-container">
+    <p class="text-xl my-2 break-all">
+      {{ (currentQuestionObj$ | async)?.question }}
+    </p>
+    <div class="question-container__answers-wrapper h-80 overflow-y-auto mt-3">
+      <form [formGroup]="quizForm" class="h-full">
+        @for (answer of (currentQuestionObj$ | async)?.answers; track $index) {
+          <div class="flex items-center mb-4 answer-box">
+            <input
+              (change)="onSelectAnswer()"
+              [id]="answer.key"
+              type="radio"
+              [value]="answer.key"
+              [checked]="(currentQuestionObj$ | async)?.selectedAnswer === answer.key"
+              formControlName="selectedAnswer"
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
+            />
+            <label class="ml-2" [for]="answer.key">{{ answer.answer }}</label>
+          </div>
+        }
+      </form>
+    </div>
+  </div>
+  <footer class="exam-footer flex flex-col sm:flex-row justify-between items-center gap-4 p-4 mt-8">
+    <button
+      [disabled]="isBackBtnDisabled()"
+      (click)="onBack()"
+      class="flex items-center gap-2 w-full sm:w-auto font-semibold py-2 px-6 rounded-s-full rounded-e-none shadow-lg border-2 border-blue-100 bg-orange-500 hover:bg-orange-600 text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>{{ 'examQuestions.back' | translate }}</span>
+    </button>
+    <button
+      [disabled]="isNextBtnDisabled()"
+      (click)="onNext()"
+      class="flex items-center gap-2 w-full sm:w-auto font-semibold py-2 px-6 rounded-e-full rounded-s-none shadow-lg border-2 border-blue-100 bg-blue-500 hover:bg-blue-600 text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      <span>{{ 'examQuestions.next' | translate }}</span>
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </footer>
+</div>
+

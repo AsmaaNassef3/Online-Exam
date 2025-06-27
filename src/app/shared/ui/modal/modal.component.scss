@@ -1,0 +1,59 @@
+.modal{
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.7); // Light mode background
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.modal-content{
+  background-color: #f9f9f9; // Lighter modal content for light mode
+  padding: 20px;
+  border-radius: 2rem !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  max-height: 600px;
+  height: 600px;
+  width: 100%;
+  position: relative;
+  overflow-y: unset;
+}
+
+.modal-content .modal-actions, .modal-content .button-row, .modal-content button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    max-width: 98vw;
+    max-height: 90vh;
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    overflow-y: unset;
+  }
+  .modal-content .modal-actions, .modal-content .button-row, .modal-content button {
+    flex-direction: row;
+    gap: 0.3rem;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    font-size: 0.95rem;
+    min-width: 80px;
+    max-width: 100%;
+    width: auto;
+  }
+  .modal-content button {
+    padding: 6px 14px !important;
+    font-size: 0.95rem !important;
+    min-width: 80px;
+    max-width: 100%;
+  }
+}

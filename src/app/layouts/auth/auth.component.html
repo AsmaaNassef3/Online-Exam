@@ -1,0 +1,90 @@
+<section class="lg:flex lg:flex-row container min-h-screen" [attr.dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
+  <!-- Left Section (Desktop Only) -->
+  <section
+    class="hidden lg:flex lg:w-1/2 flex-col lg:pt-20 lg:ps-20 rounded-tr-custom rounded-br-custom lg:shadow-custom lg:pb-40 lg:pe-36 bg-photo"
+  >
+    <header class="lg:mb-20">
+      <h1 class="mb-2 text-5xl font-bold leading-normal">
+        {{ 'auth.welcome' | translate }}
+        <p class="text-heading">{{ 'auth.brand' | translate }}</p>
+      </h1>
+      <p class="leading-[40px] text-lg font-normal">
+        {{ 'auth.tagline' | translate }}
+      </p>
+    </header>
+    <div class="lg:me-20">
+      <img
+        src="/images/bro.png"
+        alt=""
+        class="lg:w-[408px] w-[220px] h-[220px] lg:h-[434px]"
+      />
+    </div>
+  </section>
+
+  <!-- Right Section (Always Visible) -->
+  <section class="flex lg:w-1/2 w-full flex-col">
+    <!-- Navigation -->
+    <nav class="xl:ms-72 xl:mt-20 mt-10 xl:me-20">
+      <ul
+        class="flex flex-row lg:justify-start lg:space-x-20 justify-evenly items-center"
+      >
+        <li class="relative group">
+          <button
+            class="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors duration-200 focus:outline-none"
+            type="button"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+              />
+            </svg>
+            <span class="font-medium">{{ currentLang === 'ar' ? ('lang.arabic' | translate) : ('lang.english' | translate) }}</span>
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown -->
+          <ul
+            class="absolute top-full mt-2 w-36 bg-white border border-gray-200 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+          >
+            <li>
+              <a  (click)="switchLang('en')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 rounded-t-xl">{{ 'lang.english' | translate }}</a>
+            </li>
+            <li>
+              <a  (click)="switchLang('ar')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">{{ 'lang.arabic' | translate }}</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a class="text-[20px] whitespace-nowrap text-[#4461F2] font-bold" routerLink="/login">{{ 'auth.signin' | translate }}</a>
+        </li>
+        <li>
+          <a class="border text-[20px] font-normal rounded-custom2 py-3 px-7 text-[#4461F2]" routerLink="/register">{{ 'auth.register' | translate }}</a>
+        </li>
+
+      </ul>
+    </nav>
+    <div class="grid">
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</section>

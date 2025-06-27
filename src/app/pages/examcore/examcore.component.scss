@@ -1,0 +1,18 @@
+.animate-bright-glow-soft {
+  animation: brightGlowSoft 2.5s ease-in-out infinite alternate;
+}
+@keyframes brightGlowSoft {
+  from {
+    box-shadow: 0 0 16px 0 rgba(0, 153, 255, 0.12), 0 0 0 0 rgba(0, 255, 153, 0.08);
+  }
+  to {
+    box-shadow: 0 0 32px 8px rgba(0, 153, 255, 0.18), 0 0 16px 8px rgba(0, 255, 153, 0.12);
+  }
+}
+.animate-count-up {
+  animation: countUp 1.5s ease-in;
+}
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
