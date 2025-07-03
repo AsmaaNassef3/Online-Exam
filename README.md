@@ -36,7 +36,7 @@ An advanced online exam application built using Angular with Clean Architecture,
 
 ## 🌍 Live Demo
 
-🔗 [Try the app live here](https://github.com/AsmaaNassef3/Online-Exam)
+🔗 [Try the app live here](https://online-exam-evae.vercel.app/)
 
 ## 📦 Installation
 
